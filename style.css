@@ -2,7 +2,10 @@
   --color-blue: #0ea5e9;
   --color-grey: #64748b;
   --color-box-shadow: rgba(0, 0, 0, 0.2);
-  --color-box-shadow-opaque: rgba(0, 0, 0, 0.6);
+  --color-box-shadow-opaque: rgba(0, 0, 0, 0.4);
+  --font-primary: 'Inter';
+  --font-fallback-stack: system-ui, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
 /* Resets */
@@ -25,6 +28,10 @@ a {
 .flex-column {
   display: flex;
   flex-direction: column;
+}
+
+html {
+  font-family: var(--font-primary), var(--font-fallback-stack);
 }
 
 html,
