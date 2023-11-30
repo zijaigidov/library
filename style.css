@@ -1,7 +1,39 @@
+:root {
+  --color-blue: #0ea5e9;
+  --color-grey: #64748b;
+}
+
 *,
 *::before,
 *::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+html,
+body,
+.grid {
+  height: 100%;
+}
+
+.grid {
+  display: grid;
+  grid:
+    'header header' 150px
+    'sidebar main' 1fr / 300px 1fr;
+}
+
+.header {
+  grid-area: header;
+  background: var(--color-blue);
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background: var(--color-grey);
+}
+
+.main {
+  grid-area: main;
 }
