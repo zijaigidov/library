@@ -94,7 +94,28 @@ body,
 
 .sidebar {
   grid-area: sidebar;
+  text-align: center;
+
+  color: white;
   background: var(--color-grey);
+  padding: 2.5rem 3rem;
+}
+
+.sidebar .statistics h2 {
+  font-size: 1.875rem;
+  margin-bottom: 1rem;
+}
+
+.sidebar .statistics p {
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar .statistics span {
+  font-weight: normal;
+  float: right;
 }
 
 /* Main */
