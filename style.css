@@ -1,6 +1,7 @@
 :root {
   --color-blue: #0ea5e9;
   --color-grey: #64748b;
+  --color-grey-light: hsl(0, 0%, 80%);
   --color-box-shadow: rgba(0, 0, 0, 0.2);
   --color-box-shadow-opaque: rgba(0, 0, 0, 0.4);
   --font-primary: 'Inter';
@@ -94,6 +95,7 @@ body,
 
 .sidebar {
   grid-area: sidebar;
+  justify-content: space-between;
   text-align: center;
 
   color: white;
@@ -116,6 +118,10 @@ body,
 .sidebar .statistics span {
   font-weight: normal;
   float: right;
+}
+
+.sidebar .attribution:hover {
+  color: var(--color-grey-light);
 }
 
 /* Main */
