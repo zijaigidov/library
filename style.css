@@ -86,7 +86,7 @@ body,
   font-size: 2.5rem;
 }
 
-.header .sign-in-btn {
+.header .btn-sign-in {
   font-weight: 600;
   align-self: center;
   color: black;
@@ -96,7 +96,7 @@ body,
   box-shadow: 0 2px 16px var(--color-box-shadow);
 }
 
-.header .sign-in-btn:hover {
+.header .btn-sign-in:hover {
   filter: brightness(80%);
 }
 
@@ -140,7 +140,7 @@ body,
   position: relative;
 }
 
-#add-book-btn {
+#btn-open-modal {
   position: absolute;
   bottom: 2.5rem;
   /* For alignment with sign in button */
@@ -156,6 +156,6 @@ body,
   transition: transform 0.4s ease-in-out;
 }
 
-#add-book-btn:hover {
+#btn-open-modal:hover {
   transform: scale(1.3);
 }
