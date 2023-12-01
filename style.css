@@ -24,11 +24,20 @@ a {
   text-decoration: none;
 }
 
+button {
+  border: none;
+}
+
 /* Utility classes */
 
 .flex-column {
   display: flex;
   flex-direction: column;
+}
+
+.grid-center {
+  display: grid;
+  place-items: center;
 }
 
 html {
@@ -128,4 +137,25 @@ body,
 
 .main {
   grid-area: main;
+  position: relative;
+}
+
+#add-book-btn {
+  position: absolute;
+  bottom: 2.5rem;
+  /* For alignment with sign in button */
+  right: calc(3.875rem + 3rem / 2);
+
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: white;
+  background: var(--color-blue);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  transition: transform 0.4s ease-in-out;
+}
+
+#add-book-btn:hover {
+  transform: scale(1.3);
 }
