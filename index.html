@@ -33,6 +33,37 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <dialog>
+      <form method="dialog" id="book-form" class="flex-column">
+        <div class="form-header">
+          <h3>Add book</h3>
+          <button type="button" id="btn-close-modal">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </button>
+        </div>
+        <div class="form-control">
+          <label for="book-title">Title</label>
+          <input type="text" id="book-title" name="book-title" placeholder="A Game of Thrones">
+        </div>
+        <div class="form-control">
+          <label for="book-author">Author</label>
+          <input type="text" id="book-author"  name="book-author" placeholder="George R. R. Martin">
+        </div>
+        <div class="form-control">
+          <label for="book-pages">Number of pages</label>
+          <input type="text" id="book-pages" name="book-pages" placeholder="694">
+        </div>
+        <div class="form-control">
+          <label for="book-img-url">Image URL (optional)</label>
+          <input type="url" id="book-img-url" name="book-img-url" placeholder="https://example.com">
+        </div>
+        <div class="form-control">
+          <input type="checkbox" id="book-isread" name="book-isread">
+          <label for="book-isread">I have finished the book</label>
+        </div>
+        <button type="submit">Add book</button>
+      </form>
+    </dialog>
     <div class="grid">
       <header class="header">
         <a href="#" class="logo">
