@@ -1,3 +1,5 @@
+// ***** LIBRARY AND BOOK LOGIC *****
+
 const library = [];
 
 function Book(title, author, pages, imageURL, isRead) {
@@ -12,7 +14,8 @@ Book.prototype.addToLibrary = function () {
   library.push(this);
 };
 
-// Modal for adding book to library
+// ***** MODAL FOR ADDING BOOK *****
+
 const bookModal = document.querySelector('dialog');
 const btnOpenModal = document.getElementById('btn-open-modal');
 const btnCloseModal = document.getElementById('btn-close-modal');
@@ -20,7 +23,8 @@ const btnCloseModal = document.getElementById('btn-close-modal');
 btnOpenModal.addEventListener('click', () => bookModal.showModal());
 btnCloseModal.addEventListener('click', () => bookModal.close());
 
-// Validation for book form
+// ***** FORM VALIDATION *****
+
 const bookForm = document.getElementById('book-form');
 const bookTitle = document.getElementById('book-title');
 const bookAuthor = document.getElementById('book-author');
@@ -37,8 +41,9 @@ const errorMessagesMap = new Map(
 bookForm.addEventListener('submit', (e) => handleFormSubmission(e));
 
 function handleFormSubmission(e) {
-  // Prevent the modal from automatically closing on submit
+  // To prevent the modal from automatically closing on submit
   e.preventDefault();
+
   clearValidation();
   setDefaultValidation();
 
@@ -62,7 +67,6 @@ function handleFormSubmission(e) {
   }
 }
 
-// Clear the validation styles and input fields when the user closes the modal
 bookModal.addEventListener('close', () => {
   clearValidation();
   bookForm.reset();

@@ -21,7 +21,7 @@ Note: The custom property for the backdrop's background color must be defined in
   --color-backdrop: rgba(0, 0, 0, 0.3);
 }
 
-/* Resets */
+/* ***** RESETS ***** */
 
 *,
 *::before,
@@ -40,7 +40,7 @@ button {
   border: none;
 }
 
-/* Utility classes */
+/* ***** UTILITY CLASSES ***** */
 
 .flex-column {
   display: flex;
@@ -51,6 +51,8 @@ button {
   display: grid;
   place-items: center;
 }
+
+/* ***** PAGE ***** */
 
 html {
   font-family: var(--font-primary), var(--font-fallback-stack);
@@ -69,7 +71,7 @@ body,
     'sidebar main' 1fr / 300px 1fr;
 }
 
-/* Header */
+/* ***** HEADER ***** */
 
 .header {
   grid-area: header;
@@ -112,7 +114,7 @@ body,
   filter: brightness(80%);
 }
 
-/* Sidebar */
+/* ***** SIDEBAR ***** */
 
 .sidebar {
   grid-area: sidebar;
@@ -145,7 +147,7 @@ body,
   color: var(--color-grey-light);
 }
 
-/* Main */
+/* ***** MAIN CONTENT ***** */
 
 .main {
   grid-area: main;
@@ -172,7 +174,7 @@ body,
   transform: scale(1.3);
 }
 
-/* Modal */
+/* ***** MODAL ***** */
 
 dialog {
   position: fixed;
@@ -229,6 +231,8 @@ dialog[open]::backdrop {
     background: var(--color-backdrop);
   }
 }
+
+/* ***** MODAL FORM ***** */
 
 #book-form {
   gap: 0.5rem;
