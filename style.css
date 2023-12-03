@@ -1,4 +1,6 @@
 :root {
+  --color-green: green;
+  --color-red: #ff2f06;
   --color-blue: #0ea5e9;
   --color-grey: #64748b;
   --color-grey-light: hsl(0, 0%, 80%);
@@ -229,7 +231,7 @@ dialog[open]::backdrop {
 }
 
 #book-form {
-  gap: 1.25rem;
+  gap: 0.5rem;
   background: var(--color-grey-lighter);
   padding: 2rem 4rem;
 }
@@ -251,6 +253,10 @@ dialog[open]::backdrop {
   background: inherit;
 }
 
+#book-form h3 {
+  margin-bottom: 0.25rem;
+}
+
 #book-form .form-control input {
   display: block;
   border: 1px solid var(--color-grey-light);
@@ -259,9 +265,29 @@ dialog[open]::backdrop {
   margin-top: 0.375rem;
 }
 
+#book-form .form-control .error-msg {
+  visibility: hidden;
+  color: var(--color-red);
+  font-size: 0.8rem;
+  text-indent: 2px;
+  margin-top: 2px;
+}
+
 #book-form .form-control input[type='checkbox'] {
   display: inline-block;
   margin-right: 4px;
+}
+
+#book-form .form-control input.valid {
+  border: 1px solid var(--color-green);
+}
+
+#book-form .form-control input.invalid {
+  border: 1px solid var(--color-red);
+}
+
+#book-form .form-control input:focus {
+  border: 1px solid var(--color-blue);
 }
 
 #book-form button[type='submit'] {
