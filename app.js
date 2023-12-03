@@ -1,3 +1,17 @@
+const library = [];
+
+function Book(title, author, pages, imageURL, isRead) {
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+  this.imageURL = imageURL;
+  this.isRead = isRead;
+}
+
+Book.prototype.addToLibrary = function () {
+  library.push(this);
+};
+
 // Modal for adding book to library
 const bookModal = document.querySelector('dialog');
 const btnOpenModal = document.getElementById('btn-open-modal');
@@ -12,6 +26,7 @@ const bookTitle = document.getElementById('book-title');
 const bookAuthor = document.getElementById('book-author');
 const bookPages = document.getElementById('book-pages');
 const bookImageURL = document.getElementById('book-image-url');
+const bookIsRead = document.getElementById('book-is-read');
 
 const validatableInputs = [bookTitle, bookAuthor, bookPages, bookImageURL];
 const errorMessages = bookForm.querySelectorAll('.error-msg');
@@ -32,8 +47,16 @@ function handleFormSubmission(e) {
   validateInput(bookPages);
   validateInput(bookImageURL);
 
-  if (!bookForm.checkValidity()) {
-  } else {
+  if (bookForm.checkValidity()) {
+    const newBook = new Book(
+      bookTitle.value,
+      bookAuthor.value,
+      +bookPages.value,
+      bookImageURL.value,
+      bookIsRead.checked,
+    );
+    newBook.addToLibrary();
+
     bookModal.close();
     bookForm.reset();
   }
