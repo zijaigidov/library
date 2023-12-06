@@ -17,8 +17,8 @@ Book.prototype.addToLibrary = function () {
 // ***** MODAL FOR ADDING BOOK *****
 
 const bookModal = document.querySelector('dialog');
-const btnOpenModal = document.getElementById('btn-open-modal');
-const btnCloseModal = document.getElementById('btn-close-modal');
+const btnOpenModal = document.getElementById('open-modal-btn');
+const btnCloseModal = document.getElementById('close-modal-btn');
 
 btnOpenModal.addEventListener('click', () => bookModal.showModal());
 btnCloseModal.addEventListener('click', () => bookModal.close());

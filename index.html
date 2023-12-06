@@ -37,17 +37,17 @@
       referrerpolicy="no-referrer"
     />
 
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
   <body>
 
     <!-- ***** MODAL FOR ADDING BOOK ***** -->
     <dialog>
-      <form novalidate method="dialog" id="book-form" class="flex-column">
+      <form novalidate method="dialog" id="book-form">
 
         <div class="form-header">
           <h3>Add book</h3>
-          <button type="button" id="btn-close-modal">
+          <button type="button" id="close-modal-btn">
             <i class="fa-solid fa-circle-xmark"></i>
           </button>
         </div>
@@ -95,16 +95,16 @@
             src="./assets/images/logo.svg"
             alt="A book representing Bookster's logo"
           />
-          <div class="flex-column">
+          <div>
             <p class="company-name">Bookster</p>
             <p>Your personal online library</p>
           </div>
         </a>
-        <a href="#" class="btn-sign-in">Sign in</a>
+        <a href="#" class="sign-in-btn">Sign in</a>
       </header>
 
       <!-- ***** SIDEBAR ***** -->
-      <aside class="sidebar flex-column">
+      <aside class="sidebar">
 
         <section class="statistics">
           <h2>Statistics</h2>
@@ -125,7 +125,7 @@
 
       <!-- ***** MAIN CONTENT ***** -->
       <main class="main">
-        <button type="button" id="btn-open-modal" class="grid-center">
+        <button type="button" id="open-modal-btn">
           <i class="fa-solid fa-plus"></i>
         </button>
       </main>

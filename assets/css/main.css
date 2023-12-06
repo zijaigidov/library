@@ -1,0 +1,243 @@
+/* <==== Main SCSS stylesheet ====> */
+/* Import abstract partials */
+/* Partial SCSS stylesheet for resets */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+}
+
+/* Partial Sass stylesheet for variables */
+/* Colors */
+/* Fonts */
+/* Partial SCSS stylesheet for mixins */
+/* Import section partials */
+/* Partial SCSS stylesheet for document styles */
+html,
+body,
+.grid {
+  height: 100%;
+}
+
+html {
+  font-family: "Inter", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.grid {
+  display: grid;
+  grid: "header header" 150px "sidebar main" 1fr/300px 1fr;
+}
+
+/* Partial SCSS stylesheet for header */
+.header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+  color: white;
+  background: #0ea5e9;
+  padding: 2.5rem 4rem;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+}
+.header .logo {
+  display: flex;
+  gap: 1.5rem;
+}
+.header .logo .company-name {
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+.header .sign-in-btn {
+  align-self: center;
+  font-weight: 600;
+  color: black;
+  background: white;
+  padding: 0.75rem 1.75rem;
+  border-radius: 20px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
+}
+.header .sign-in-btn:hover {
+  filter: brightness(80%);
+}
+
+/* Partial SCSS stylesheet for sidebar */
+.sidebar {
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  background: #64748b;
+  padding: 2.5rem 3rem;
+}
+.sidebar .statistics h2 {
+  font-size: 1.875rem;
+  margin-bottom: 1rem;
+}
+.sidebar .statistics p {
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+.sidebar .statistics span {
+  font-weight: normal;
+  float: right;
+}
+.sidebar .attribution:hover {
+  color: #cccccc;
+}
+
+/* Partial SCSS stylesheet for main content */
+.main {
+  grid-area: main;
+  position: relative;
+}
+
+#open-modal-btn {
+  position: absolute;
+  bottom: 2.5rem;
+  /* This is to align it with the sign in button. Note that 1.75rem is
+  half the button's width */
+  right: 5.75rem;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: white;
+  background: #0ea5e9;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  transition: transform 0.4s ease-in-out;
+}
+#open-modal-btn:hover {
+  transform: scale(1.25);
+}
+
+/* Partial SCSS stylesheet for modal */
+dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  border: none;
+  border-radius: 3px;
+  animation: dialog-fade-out 0.75 ease-out;
+}
+
+dialog[open] {
+  animation: dialog-fade-in 0.75s ease-in;
+}
+
+dialog[open]::backdrop {
+  animation: backdrop-fade-in 0.75s ease-out forwards;
+}
+
+@keyframes dialog-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0);
+    display: none;
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    display: block;
+  }
+}
+@keyframes dialog-fade-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+    display: block;
+  }
+  to {
+    opacity: 0;
+    transform: scale(0);
+    display: none;
+  }
+}
+@keyframes backdrop-fade-in {
+  from {
+    background: rgba(0, 0, 0, 0);
+  }
+  to {
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
+/* Modal form */
+#book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: #f4f4f4;
+  padding: 2rem 4rem;
+}
+#book-form .form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#book-form .form-header h3 {
+  font-size: 1.75rem;
+  margin-bottom: 0.25rem;
+}
+#book-form .form-header #close-modal-btn {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #cccccc;
+  background: inherit;
+}
+#book-form .form-control label {
+  display: inline-block;
+  margin-bottom: 0.375rem;
+}
+#book-form .form-control input {
+  display: block;
+  padding: 0.5rem;
+  border: 1px solid #cccccc;
+  outline: none;
+}
+#book-form .form-control input.valid {
+  border: 1px solid green;
+}
+#book-form .form-control input.invalid {
+  border: 1px solid #ff2f06;
+}
+#book-form .form-control input:focus {
+  border: 1px solid #0ea5e9;
+}
+#book-form .form-control input[type=checkbox] {
+  display: inline-block;
+  margin-right: 4px;
+}
+#book-form .form-control .error-msg {
+  visibility: hidden;
+  font-size: 0.8rem;
+  color: #ff2f06;
+  text-indent: 2px;
+  margin-top: 2px;
+}
+#book-form .form-control:last-of-type {
+  margin-bottom: 0.5rem;
+}
+#book-form button[type=submit] {
+  cursor: pointer;
+  color: white;
+  background: #0ea5e9;
+  height: 3rem;
+}
+#book-form button[type=submit]:hover {
+  filter: brightness(120%);
+}/*# sourceMappingURL=main.css.map */

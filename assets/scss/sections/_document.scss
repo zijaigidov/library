@@ -1,0 +1,19 @@
+/* Partial SCSS stylesheet for document styles */
+
+html,
+body,
+.grid {
+  height: 100%;
+}
+
+html {
+  font-family: $font-primary, $font-stack-fallback;
+}
+
+.grid {
+  display: grid;
+  grid:
+    'header header' 150px
+    'sidebar main' 1fr
+    / 300px 1fr;
+}

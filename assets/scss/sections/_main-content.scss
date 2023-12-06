@@ -1,0 +1,28 @@
+/* Partial SCSS stylesheet for main content */
+
+.main {
+  grid-area: main;
+  position: relative;
+}
+
+#open-modal-btn {
+  position: absolute;
+  bottom: 2.5rem;
+  /* This is to align it with the sign in button. Note that 1.75rem is
+  half the button's width */
+  right: calc(4rem + 1.75rem);
+  @include grid-center;
+
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: white;
+  background: $color-blue;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  transition: transform 0.4s ease-in-out;
+
+  &:hover {
+    transform: scale(1.25);
+  }
+}

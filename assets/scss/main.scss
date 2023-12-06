@@ -1,0 +1,13 @@
+/* <==== Main SCSS stylesheet ====> */
+
+/* Import abstract partials */
+@import 'abstracts/resets';
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+/* Import section partials */
+@import 'sections/document';
+@import 'sections/header';
+@import 'sections/sidebar';
+@import 'sections/main-content';
+@import 'sections/modal';

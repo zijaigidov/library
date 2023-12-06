@@ -1,0 +1,32 @@
+/* Partial SCSS stylesheet for sidebar */
+
+.sidebar {
+  grid-area: sidebar;
+  @include flex-col;
+  justify-content: space-between;
+  color: white;
+  background: #64748b;
+  padding: 2.5rem 3rem;
+
+  .statistics {
+    h2 {
+      font-size: 1.875rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-weight: 600;
+      font-size: 1.125rem;
+      margin-bottom: 0.5rem;
+    }
+
+    span {
+      font-weight: normal;
+      float: right;
+    }
+  }
+
+  .attribution:hover {
+    color: $color-grey;
+  }
+}

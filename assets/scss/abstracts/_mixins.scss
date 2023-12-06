@@ -1,0 +1,11 @@
+/* Partial SCSS stylesheet for mixins */
+
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin grid-center {
+  display: grid;
+  place-items: center;
+}
