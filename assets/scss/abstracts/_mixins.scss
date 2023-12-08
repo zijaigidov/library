@@ -5,7 +5,22 @@
   flex-direction: column;
 }
 
+@mixin flex-center($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
 @mixin grid-center {
   display: grid;
   place-items: center;
+}
+
+@mixin absolute-cover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
