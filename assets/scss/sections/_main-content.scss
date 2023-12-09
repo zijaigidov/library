@@ -17,7 +17,8 @@
 .book-cover {
   /* Alignment */
   @include absolute-cover;
-
+  /* Set default background in case the user doesn't enter a URL */
+  background-color: #252525;
   background-position: top;
   background-size: cover;
 }
