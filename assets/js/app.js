@@ -24,6 +24,7 @@ Book.prototype.addToLibrary = function () {
 Book.prototype.createBookCard = function () {
   const card = document.createElement('article');
   card.classList.add('book-card');
+  card.setAttribute('data-library-index', library.length);
 
   const cover = document.createElement('div');
   cover.classList.add('book-cover');
@@ -41,7 +42,6 @@ Book.prototype.createBookCard = function () {
 
   const author = document.createElement('p');
   author.textContent = this.author;
-  author.classList.add('author');
   info.appendChild(author);
 
   const pages = document.createElement('p');
@@ -54,6 +54,16 @@ Book.prototype.createBookCard = function () {
   removeIcon.classList.add('fa-solid', 'fa-trash');
   removeBtn.appendChild(removeIcon);
   info.appendChild(removeBtn);
+
+  removeBtn.addEventListener('click', () => {
+    // Get the corresponding book element
+    const bookElement = removeBtn.parentElement.parentElement;
+    const index = bookElement.getAttribute('data-library-index');
+
+    // Remove the element from the page and the library
+    bookElement.remove();
+    library.splice(index, 1);
+  });
 
   const statusBtn = document.createElement('button');
   statusBtn.classList.add('btn-status');
