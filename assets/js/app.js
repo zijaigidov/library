@@ -72,6 +72,10 @@ Book.prototype.createBookCard = function () {
   if (this.isRead) statusIcon.classList.add('fa-solid', 'fa-circle-check');
   else statusIcon.classList.add('fa-solid', 'fa-circle-xmark');
 
+  statusBtn.addEventListener('click', () => {
+    this.toggleStatus();
+  });
+
   statusBtn.appendChild(statusIcon);
   info.appendChild(statusBtn);
 
@@ -80,6 +84,18 @@ Book.prototype.createBookCard = function () {
 
 Book.prototype.displayBook = function () {
   main.appendChild(this.cardElement);
+};
+
+// Function for toggling the status of a book
+Book.prototype.toggleStatus = function () {
+  this.isRead = !this.isRead;
+  const statusIcon = this.cardElement.querySelector('.btn-status i');
+
+  if (statusIcon.classList.contains('fa-circle-check')) {
+    statusIcon.classList.replace('fa-circle-check', 'fa-circle-xmark');
+  } else {
+    statusIcon.classList.replace('fa-circle-xmark', 'fa-circle-check');
+  }
 };
 
 // ***** MODAL FOR ADDING BOOK *****
